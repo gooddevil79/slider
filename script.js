@@ -92,4 +92,4 @@ const slider = function () {
   });
 };
 // loading webpage
-window.addEventListener('load', slider);
+document.addEventListener('DOMContentLoaded', slider);
