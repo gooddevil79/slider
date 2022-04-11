@@ -5,14 +5,15 @@ const slides = document.querySelectorAll('.slide');
 const buttonsContainer = document.querySelector('.slider__btns');
 const dotContainer = document.querySelector('.dots');
 const overlay = document.querySelector('.loading__overlay');
+const loadingAnimation = document.querySelector('.loading');
 //////////////////////////////////////////////////////////
-overlay.remove();
 
 const slider = function () {
   let curSlide = 0;
   const maxSlide = slides.length;
   overlay.classList.remove('loading__overlay');
-  overlay.remove();
+  loadingAnimation.classList.remove('loading');
+  // overlay.remove();
 
   ////////////////////Functions //////////////////////
   const activateDots = function (slide) {
