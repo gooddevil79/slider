@@ -96,4 +96,4 @@ const slider = function () {
   });
 };
 // loading webpage
-document.addEventListener('DOMContentLoaded', slider);
+window.addEventListener('load', slider);
