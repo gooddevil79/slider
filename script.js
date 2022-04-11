@@ -6,10 +6,14 @@ const buttonsContainer = document.querySelector('.slider__btns');
 const dotContainer = document.querySelector('.dots');
 const overlay = document.querySelector('.loading__overlay');
 //////////////////////////////////////////////////////////
+overlay.remove();
+
 const slider = function () {
   let curSlide = 0;
   const maxSlide = slides.length;
   overlay.classList.remove('loading__overlay');
+  overlay.remove();
+
   ////////////////////Functions //////////////////////
   const activateDots = function (slide) {
     document
