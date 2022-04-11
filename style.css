@@ -1,0 +1,153 @@
+/* google font  */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+/* root font size */
+html {
+  font-size: 10px;
+}
+body {
+  padding: 2rem;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background: #2c3e50; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4ca1af,
+    #2c3e50
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4ca1af,
+    #2c3e50
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* whole container */
+.slider__section {
+  width: 100%;
+  height: 100%;
+  background: url(img/pexels-cátia-matos-1072179.jpg) center no-repeat,
+    linear-gradient(to top, #4ca1af, #2c3e50);
+  background-size: cover;
+  background-blend-mode: hard-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* slides container */
+.slider {
+  width: 90%;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #fff;
+}
+/* each slide */
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 0.9s;
+  padding: 10rem;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* angel buttons too swip slides */
+.btn {
+  background: rgba(255, 255, 255, 0.041);
+  height: 70%;
+  width: 10rem;
+  color: #222;
+  border: none;
+  outline: none;
+  font-size: 7rem;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease-in 0.3s;
+  transform: translateY(-50%);
+}
+.btn i {
+  opacity: 0.2;
+  color: #fff;
+  position: absolute;
+  pointer-events: none;
+}
+.slide__btn--right {
+  right: 0;
+}
+.slide__btn--left {
+  left: 0;
+}
+.highlight__btn {
+  background-color: rgba(255, 255, 255, 0.521) !important;
+  transition: all ease-in 0.3s;
+}
+/* Dot section */
+.dots {
+  position: absolute;
+  bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.dots__dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50px;
+  border: none;
+  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s;
+  transform: scale(1);
+}
+.dots__dot--active {
+  background-color: #70808f;
+  transform: scale(1.5);
+  transition: all 0.5s;
+}
+/* Loading phase */
+.loading__overlay {
+  background: url(img/pexels-cátia-matos-1072179.jpg) center no-repeat;
+  background-size: cover;
+  background-blend-mode: hard-light;
+  backdrop-filter: blur(20px);
+  filter: blur(20px);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Author text */
+.author {
+  position: absolute;
+  font-size: 1.6rem;
+  font-family: 'Dancing Script', cursive;
+  bottom: 5rem;
+  color: #fff;
+}
+.author a {
+  font-family: sans-serif;
+  color: #4ca1af;
+}
