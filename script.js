@@ -7,12 +7,14 @@ const dotContainer = document.querySelector('.dots');
 const overlay = document.querySelector('.loading__overlay');
 const loadingAnimation = document.querySelector('.loading');
 //////////////////////////////////////////////////////////
-
+const removeLoading = function () {
+  // overlay.classList.remove('loading__overlay');
+  loadingAnimation.classList.remove('loading');
+};
 const slider = function () {
   let curSlide = 0;
   const maxSlide = slides.length;
-  overlay.classList.remove('loading__overlay');
-  loadingAnimation.classList.remove('loading');
+
   // overlay.remove();
 
   ////////////////////Functions //////////////////////
@@ -78,6 +80,12 @@ const slider = function () {
   const init = function () {
     slides.forEach((s, i) => {
       s.style.transform = `translateX(${100 * i}%)`;
+      // lazy loading images
+      s.children[0].src = s.children[0].dataset.src;
+      s.children[0].addEventListener('load', function (e) {
+        this.classList.remove('loading-image');
+        removeLoading();
+      });
     });
     creatDots();
     activateDots(curSlide);
@@ -96,5 +104,4 @@ const slider = function () {
     activateDots(slide);
   });
 };
-// loading webpage
-window.addEventListener('load', slider);
+slider();
